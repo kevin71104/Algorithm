@@ -5,20 +5,16 @@ def operation1(input_string):
 	input arg:
 		input_list: string format data read from input file
 			e.g. "1 2 3 4 5"
-	
+
 	output:
 		output_list: a list of integers
 			e.g. [1, 2, 3, 4, 5]
 	'''
 
 # Please finish this function here.
-##################################### 
-
-
-
-
-
-
+#####################################
+	str1 = input_string.split(' ')
+	output_list = [int(str1[i]) for i in range(len(str1))]
 #####################################
 	return output_list
 
@@ -34,13 +30,8 @@ def operation2(input_list):
 	'''
 
 # Please finish this function here.
-##################################### 
-
-
-
-
-
-
+#####################################
+	output_list = [input_list[i]+1 for i in range(len(input_list))]
 #####################################
 	return output_list
 
@@ -56,13 +47,9 @@ def operation3(input_list):
 	'''
 
 # Please finish this function here.
-##################################### 
-
-
-
-
-
-
+#####################################
+	output_list = input_list
+	output_list.append(100)
 #####################################
 	return output_list
 
@@ -78,13 +65,8 @@ def operation4(input_list):
 	'''
 
 # Please finish this function here.
-##################################### 
-
-
-
-
-
-
+#####################################
+	output_list = [input_list[-i-1] for i in range(len(input_list))]
 #####################################
 	return output_list
 
@@ -100,13 +82,8 @@ def operation5(input_list):
 	'''
 
 # Please finish this function here.
-##################################### 
-
-
-
-
-
-
+#####################################
+	output_string = ' '.join(str(e) for e in input_list)
 #####################################
 	return output_string
 
@@ -118,9 +95,13 @@ if __name__ == "__main__":
 	data = inputfile.read()
 
 	output1 = operation1(data)
+	#print(output1)
 	output2 = operation2(output1)
+	#print(output2)
 	output3 = operation3(output2)
+	#print(output3)
 	output4 = operation4(output3)
+	#print(output4)
 	output5 = operation5(output4)
 
 	outputfile.write(output5)
