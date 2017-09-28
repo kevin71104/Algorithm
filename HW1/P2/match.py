@@ -27,6 +27,7 @@ def match(men, women, mprefer, wprefer):
             if women[womanIdx][originIdx] > women[womanIdx][manIdx]:
                 wives[womanIdx] = manIdx
                 del menlist[0]
+                menlist.extend([originIdx])
         else :
             wives.update({womanIdx : manIdx})
             del menlist[0]
@@ -92,6 +93,7 @@ if __name__ == '__main__':
         mprefer.append(mp)
         wprefer.append(wp)
     wives = match(men, women, mprefer, wprefer)
+    print(wives)
     if is_stable(men, women, mprefer, wives):
         print('The matching is stable.')
     else:
